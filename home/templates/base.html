@@ -63,7 +63,8 @@
                 <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-size: 15px;">
                   <li><a href="index.html" class="nav-link">Home</a></li>
                   <li><a href="services.html" class="nav-link">Services</a></li>
-                  <li><a href="cars.html" class="nav-link">Cars</a></li>
+                  <li><a href="{% url 'vehicle_cars' %}" class="nav-link">Cars</a></li>
+                  <li><a href="{% url 'vehicle_bikes' %}" class="nav-link">Bikes</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="contact.html" class="nav-link">Contact</a></li>
                   {% if user.is_authenticated %}

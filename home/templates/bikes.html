@@ -14,8 +14,8 @@
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
-              <h1>Cars For Sale</h1>
-              <p>Cars at optimum price.</p>
+              <h1>Bikes For Sale</h1>
+              <p>Bikes at optimum price.</p>
             </div>
           </div>
         </div>
@@ -26,32 +26,24 @@
     <div class="site-section bg-light">
       <div class="container">
         <div class="row">
-        {% for car in cars %}
+        {% for bike in bikes %}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="item-1">
-                <a href="#"><img src="../../{{car.image}}" alt="Image" class="img-fluid"></a>
+                <a href="#"><img src="../../{{bike.image}}" alt="Image" class="img-fluid"></a>
                 <div class="item-1-contents">
                   <div class="text-center">
-                  <h3><a href="#">{{car.name}}</a></h3>
+                  <h3><a href="#">{{bike.name}}</a></h3>
                   
-                  <div class="price">{{car.price}} lakhs</div> 
+                  <div class="price">{{bike.price}} lakhs</div> 
                   </div>
                   <ul class="specs">
                     <li>
                       <span>KM Driven</span>
-                      <span class="spec">{{car.km_driven}}</span>
-                    </li>
-                    <li>
-                      <span>Fuel Type</span>
-                      <span class="spec">{{car.fuel_type}}</span>
-                    </li>
-                    <li>
-                      <span>Transmission</span>
-                      <span class="spec">{{car.transmission_type}}</span>
+                      <span class="spec">{{bike.km_driven}}</span>
                     </li>
                     <li>
                       <span>Year</span>
-                      <span class="spec">{{car.year_bought}}</span>
+                      <span class="spec">{{bike.year_bought}}</span>
                     </li>
                   </ul>
                   <div class="d-flex action">
