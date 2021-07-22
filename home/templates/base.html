@@ -24,7 +24,7 @@
 
   </head>
 
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="font-size: 14px;">
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300" style="font-size: 14px; ">
 
     
     <div class="site-wrap" id="home-section">
@@ -46,13 +46,13 @@
           <div class="row align-items-center position-relative">
 
             <div class="col-3 ">
-              <div class="site-logo" style="margin-top: 20px">
-                <a href="index.html">CarRent</a>
+              <div class="site-logo" style="margin-top: 10px">
+                <a href="index.html" style="font-size: 20px; margin-bottom: 10px;"><img src="{% static 'images/logo3.1.jpg' %}" style="height:50px; width:60px;">ThriftWheelers</a>
               </div>
             </div>
             
   
-            <div class="col-7  text-right">
+            <div class="col-7  text-right" style="margin-top: 10px;">
               
 
               <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
@@ -60,14 +60,16 @@
               
 
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-size: 15px">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+                <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-size: 15px;">
+                  <li><a href="index.html" class="nav-link">Home</a></li>
                   <li><a href="services.html" class="nav-link">Services</a></li>
                   <li><a href="cars.html" class="nav-link">Cars</a></li>
                   <li><a href="about.html" class="nav-link">About</a></li>
                   <li><a href="contact.html" class="nav-link">Contact</a></li>
                   {% if user.is_authenticated %}
                   <li><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+                  <li><a href="{% url 'profile' %}" class="nav-link">My Profile</a></li>
+                  <img class="img-profile rounded-circle" src="{{user.profile.image.url}}" style="height:30x; width:30px;">
                   {% else %}
                   <li><a href="{% url 'login' %}" class="nav-link">Login</a></li>
                   <li><a href="{% url 'register' %}" class="nav-link">Register</a></li>

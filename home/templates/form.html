@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+   <div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1" style="background-image: url({%static 'images/home5.jpg'%});">
+         <div class="site-section">
+      <div class="container">
+        <div class="row" style="margin-top:120px">
+          <div class="col-lg-6">
+            
+              <form class="trip-form">
+                <div class="row align-items-center mb-4">
+                  <div class="col-md-4">
+                    <h3 class="m-0" style="font-size:18px;">Car Information</h3>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group">
+                    <label for="cf-1">Vehicle name</label>
+                    <input type="text" id="cf-1" placeholder="Your vehicle name" class="form-control">
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="form-group">
+                    <label for="cf-2">Km-driven</label>
+                    <input type="text" id="cf-2" placeholder="km-driven" class="form-control">
+                  </div>
+              </div>
+              <div class ="row" >
+                  <div class="form-group">
+                    <label for="cf-3">Owner</label>
+                    <input type="text" id="cf-3" placeholder="Owner" class="form-control">
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="form-group">
+                    <label for="cf-3">Fuel-type</label>
+                    <input type="text" id="cf-3" placeholder="Fuel-type" class="form-control">
+                  </div>
+                  <!--<div class="form-group col-md-3">
+                    <label for="cf-4">Return date</label>
+                    <input type="text" id="cf-4" placeholder="Your pickup address" class="form-control datepicker px-3">
+                  </div>-->
+                </div>
+                   <div class="row">
+                  <div class="form-group">
+                    <label for="cf-1">Transmission</label>
+				  <select class="form-control" id="cf-1">
+				    <option>Automatic &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+				    <option>Manual &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+				  </select>
+				</div>
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="form-group">
+                    <label for="cf-2">Year-bought</label>
+                    <input type="text" id="cf-2" placeholder="year-bought" class="form-control datepicker px-3">
+                  </div>
+              </div>
+                       <div class="row">
+                     <div class="form-group">
+                    <label for="cf-1">Seller Type</label>
+				  <select class="form-control" id="cf-1">
+				    <option>Individual &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+				    <option>Dealer &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+				  </select>
+				</div>
+				  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="form-group">
+                    <label for="cf-2">Estimated price</label>
+                    <input type="text" id="cf-2" placeholder="estimated price" class="form-control">
+                  </div>
+              </div>
+                <div class="row">
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                </div>
+              </form>
+            </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}
