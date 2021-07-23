@@ -13,32 +13,40 @@
               <form class="trip-form">
                 <div class="row align-items-center mb-4">
                   <div class="col-md-4">
-                    <h3 class="m-0" style="font-size:18px;">Begin your trip here</h3>
+                    <h3 class="m-0" style="font-size:18px;">Predict Your Car's Price</h3>
                   </div>
                   <div class="col-md-6 text-md-right">
                     <span class="text-primary">32</span> <span>cars available</span></span>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="form-group col-md-3">
-                    <label for="cf-1">Where you from</label>
-                    <input type="text" id="cf-1" placeholder="Your pickup address" class="form-control">
+                  <div class="form-group">
+                    <label for="cf-1">Car Name</label>
+                    <input type="text" id="cf-1" placeholder="Car Name" class="form-control">
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="form-group">
+                    <label for="cf-2">Km driven</label>
+                    <input type="text" id="cf-2" placeholder="Km driven" class="form-control">
                   </div>
-                  <div class="form-group col-md-3">
-                    <label for="cf-2">Where you go</label>
-                    <input type="text" id="cf-2" placeholder="Your drop-off address" class="form-control">
+                  <div class="form-group">
+                    <label for="cf-3">Year bought</label>
+                    <input type="text" id="cf-3" placeholder="Year bought" class="form-control datepicker px-3">
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="form-group">
+                    <label for="cf-4">Seller-Type</label>
+                    <input type="text" id="cf-4" placeholder="Seller-Type" class="form-control">
                   </div>
-                  <div class="form-group col-md-3">
-                    <label for="cf-3">Journey date</label>
-                    <input type="text" id="cf-3" placeholder="Your pickup address" class="form-control datepicker px-3">
-                  </div>
-                  <div class="form-group col-md-3">
-                    <label for="cf-4">Return date</label>
-                    <input type="text" id="cf-4" placeholder="Your pickup address" class="form-control datepicker px-3">
+                     <div class="form-group">
+                    <label for="cf-3">Transmission Type</label>
+                    <input type="text" id="cf-3" placeholder="transmission_type" class="form-control datepicker px-3">
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="form-group">
+                    <label for="cf-4">Fuel Type</label>
+                    <input type="text" id="cf-4" placeholder="Fuel Type" class="form-control">
                   </div>
                 </div>
                 <div class="row">
-                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <input type="submit" value="Submit" class="btn btn-secondary">
                 </div>
               </form>
             </div>
@@ -52,8 +60,8 @@
    
     
 
-    <div class="site-section bg-light">
-      <div class="container">
+    <div class="site-section bg-light" >
+      <div class="container" style="margin-top: -20px;">
         <div class="row">
           <div class="col-lg-3">
             <h3>Our Offer</h3>
@@ -72,10 +80,10 @@
           
               
               <div class="item-1">
-                <a href="#"><img src="../../{{car.image}}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
+                <a href="#"><img src="{{car.image.url}}" alt="Image" class="img-fluid"  style="width:350px; height:250px;"></a>
+                <div class="item-1-contents"  style="width:350px;">
                   <div class="text-center">
-                  <h3><a href="#">{{car.name}}</a></h3>
+                  <h3><a href="{{car.get_absolute_url}}">{{car.name}}</a></h3>
                   
                   <div class="price">{{car.price}} lakhs</div> 
                   </div>
@@ -98,7 +106,7 @@
                     </li>
                   </ul>
                   <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Contact Owner</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Owner</a>
                   </div>
                 </div>
               
@@ -106,13 +114,18 @@
          
             {% endfor %}
           </div>
+          <div class="row" style="margin-top: 20px;">
+            <div class="d-flex action">
+                    <a href="{% url 'vehicle:cars' %}" class="btn btn-secondary">View more</a>
+                  </div>
+                </div>
         </div>
           
         </div>
       </div>
     </div>
 
-
+       
 
     <div class="site-section section-3" style="background-image: url({%static 'images/hero_2.jpg' %});">
       <div class="container">

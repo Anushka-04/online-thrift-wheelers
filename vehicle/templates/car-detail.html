@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url({%static 'images/home5.jpg' %});">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+                  <div class="container">
+        <div class="row" style="margin-top: 200px;">
+          <div class="col-lg-6">
+            <div class="item-1">
+              <div class="card">
+                <a href="#"><img src="{{object.image.url}}" alt="Image" class="img-fluid"  style="width:100%; height:430px;"></a>
+              </div>
+            </div>
+            </div>   
+            <div class="item-1">
+                     <div class="col-lg-12">
+                      <div class="row" style="margin-bottom: 20px; margin-left: 10px;">
+                      <div class="d-flex action" >
+                    <a href="{% url 'vehicle:user-ads' car.owner.username %}" class="btn btn-primary">My Ads</a>
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="d-flex action" >
+                    <a class="btn btn-info" href="{% url 'vehicle:car-update' object.id%}">Update Ad</a>
+                  </div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <div class="d-flex action" >
+                    <a class="btn btn-danger" href="{% url 'vehicle:car-delete' object.id%}">Delete Ad</a>
+                  </div>
+                </div>
+                <div class="item-1-contents" style="width: 400px;">
+                  <div class="text-center">
+                  <h3><a href="#">{{object.name}}</a></h3>
+                  <div class="price">{{object.price}} lakhs</div> 
+                  </div>
+                  <ul class="specs">
+                    <li>
+                      <span>KM Driven</span>
+                      <span class="spec">{{object.km_driven}}</span>
+                    </li>
+                    <li>
+                      <span>Fuel Type</span>
+                      <span class="spec">{{object.fuel_type}}</span>
+                    </li>
+                    <li>
+                      <span>Transmission</span>
+                      <span class="spec">{{object.transmission_type}}</span>
+                    </li>
+                    <li>
+                      <span>Seller-type</span>
+                      <span class="spec">{{object.seller_type}}</span>
+                    </li>
+                    <li>
+                      <span>Owner</span>
+                      <span class="spec">{{object.owner.username}}</span>
+                    </li>
+                    <li>
+                      <span>Year</span>
+                      <span class="spec">{{object.year_bought}}</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex action">
+                    <a href="contact.html" class="btn btn-primary">Contact Owner</a>
+                  </div>
+                </div>
+              </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{% endblock %}

@@ -2,15 +2,9 @@
 {% load static %}
 {% block content %}
 
-<!doctype html>
-<html lang="en">
 
-
-
-
-
-    <div class="ftco-blocks-cover-1">
-      <div class="ftco-cover-1 overlay innerpage" style="background-image: url({%static 'images/hero_2.jpg' %})">
+<div class="ftco-blocks-cover-1">
+      <div class="ftco-cover-1 overlay innerpage" style="background-image: url({%static 'images/home5.jpg' %});">
         <div class="container">
           <div class="row align-items-center justify-content-center">
             <div class="col-lg-6 text-center">
@@ -25,14 +19,19 @@
     
     <div class="site-section bg-light">
       <div class="container">
+           <div class="row align-items-center justify-content-center" style="margin-bottom: 30px; margin-top: -70px;">
+            <div class="d-flex action">
+                    <a href="{% url 'vehicle:cars-ad' %}" class="btn btn-secondary">Add Car Ad</a>
+                  </div>
+                </div>
         <div class="row">
         {% for car in cars %}
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="item-1">
-                <a href="#"><img src="../../{{car.image}}" alt="Image" class="img-fluid"></a>
-                <div class="item-1-contents">
+                <a href="#"><img src="{{car.image.url}}" alt="Image" class="img-fluid" style="width:350px; height:250px;"></a>
+                <div class="item-1-contents" style="width:350px;">
                   <div class="text-center">
-                  <h3><a href="#">{{car.name}}</a></h3>
+                  <h3><a href="{{car.get_absolute_url}}">{{car.name}}</a></h3>
                   
                   <div class="price">{{car.price}} lakhs</div> 
                   </div>
@@ -50,13 +49,22 @@
                       <span class="spec">{{car.transmission_type}}</span>
                     </li>
                     <li>
+                      <span>Seller-type</span>
+                      <span class="spec">{{car.seller_type}}</span>
+                    </li>
+                    <li>
+                      <span>Owner</span>
+                      <span class="spec">{{car.owner.username}}</span>
+                    </li>
+                    <li>
                       <span>Year</span>
                       <span class="spec">{{car.year_bought}}</span>
                     </li>
                   </ul>
                   <div class="d-flex action">
-                    <a href="contact.html" class="btn btn-primary">Contact Owner</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Owner</a>
                   </div>
+                  
                 </div>
               </div>
           </div>
