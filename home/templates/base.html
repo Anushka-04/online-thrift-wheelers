@@ -46,8 +46,9 @@
           <div class="row align-items-center position-relative">
 
             <div class="col-3 ">
-              <div class="site-logo" style="margin-top: 10px">
-                <a href="index.html" style="font-size: 20px; margin-bottom: 10px;"><img src="{% static 'images/logo3.1.jpg' %}" style="height:50px; width:60px;">ThriftWheelers</a>
+              <div class="site-logo" style="margin-top: 8px">
+                
+                <a href="/" style="font-size: 20px; margin-bottom: 10px;"><img src="{% static 'images/logo3.png' %}" style="height:42px; width:40px;">&nbsp;&nbsp;&nbsp;ThriftWheelers</a>
               </div>
             </div>
             
@@ -62,15 +63,14 @@
               <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
                 <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-size: 15px;">
                   <li><a href="/" class="nav-link">Home</a></li>
-                  <li><a href="services.html" class="nav-link">Services</a></li>
-                  <li><a href="about.html" class="nav-link">About</a></li>
-                  <li><a href="contact.html" class="nav-link">Contact</a></li>
+                  <li><a href="{% url 'vehicle:cars' %}" class="nav-link">Cars</a></li>
+                 <li><a href="{% url 'vehicle:carpricepredict' %}" class="nav-link">Predict Car's Price</a></li>
                   {% if user.is_authenticated %}
+                  <li><a href="{% url 'vehicle:cars-ad' %}" class="nav-link">Add Car-ad</a></li>
                    <li><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
                   <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{username}}</span>
-                <img class="img-profile rounded-circle" src="{{user.profile.image.url}}"  style="height:30x; width:30px;">
+                <img class="img-profile rounded-circle" src="{{user.profile.image.url}}" style="height:30x; width:30px;">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

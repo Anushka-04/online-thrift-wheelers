@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'home',
     'users',
     'crispy_forms',
-    'vehicle'
+    'vehicle',
+    'chat',
+    'rest_framework',
+    'widget_tweaks'
 ]
 
 MIDDLEWARE = [
