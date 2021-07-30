@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div class="site-section" style="background-image: url({%static 'images/new_bg1.jpg' %});">
+
+    <div class="row" >
+          <div class="col-lg-7" style="margin-top:10px; margin-left: 150px; color:#ffffff;">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <h2 style="color:#ffffff; margin-bottom:30px;">Predictive analysis</h2>
+            <div class="row">
+             <div class="form-group">
+                    <label for="cf-1">Year-bought</label>
+                    <input type="text" id="Year" name="Year" type="number" class="form-control"  required="required">
+                  </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="form-group">
+                    <label for="cf-1">What is the Showroom Price?(In lakhs)</label>
+                    <input type="text" id="Present_Price" name="Present_Price" class="form-control"  required="required">
+                  </div>
+              </div>
+               <div class="row">
+                   <div class="form-group">
+                    <label for="cf-1">How Many Kilometers Drived?</label>
+                    <input type="text" id="Kms_Driven" name="Kms_Driven" class="form-control"  required="required">
+                  </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div class="form-group">
+                    <label for="cf-1">How much owners previously had the car?</label>
+                    <input type="text" id="Owner" name="Owner" class="form-control"  required="required">
+                  </div>
+              </div>
+               <div class="row">
+                    <div class="form-group">
+                    <label for="cf-1">How Many Kilometers Drived?</label>
+                    <input type="text" id="Kms_Driven" name="Kms_Driven" class="form-control"  required="required">
+                  </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+              <div class="form-group">
+             <label for="cf-1">What Is the Fuel type?</label><select name="Fuel_Type_Petrol" id="fuel" required="required" class="form-control">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+               </div>
+           </div>
+            <div class="row">
+               <div class="form-group">
+            <label for="cf-1">Are you A Dealer or Individual?</label><select name="Seller_Type_Individual" 
+            id="Seller_Type_Individual" required="required" class="form-control">>
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+              </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <div class="form-group">
+            <label for="cf-1">Transmission type</label><select name="Transmission_Manual" id="Transmission_Manual" 
+            required="required" class="form-control">>
+                <option value="Manual">Manual</option>
+                <option value="Automatic">Automatic</option>
+            </select>
+                </div>
+            </div>
+             <div class="row">
+            <input type="submit" id="submit" value="Calculate the Selling Price" class="btn btn-dark">
+                </div>
+            <br>
+</form></div>
+
+<div class="col-lg-5">
+    <div class="card-body">
+        <button class="btn btn-dark" style="margin-left: 150px;">{{ prediction_text }}</button>
+</div></div></div>
+</div>
+{% endblock %}

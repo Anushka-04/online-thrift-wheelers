@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="site-section" style="background-image: url({%static 'images/new_bg4.jpg'%});">
+      <div class="container" style="margin-top: 8px;">
+          <form class="form-inline my-2 my-lg-0" method="POST">
+      <input class="form-control mr-sm-2" type="search" name="query" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+           <div class="row align-items-center justify-content-center" style="margin-bottom: 30px; margin-top: -50px;">
+             <h3 style="color:#ffffff;">Search results for {{search_query}}</h3>
+                </div>
+        <div class="row">
+         {% for search in search_result %}
+          <div class="col-lg-4 col-md-6 mb-4"  style="margin-top:30px;">
+            <div class="row">
+            <img class="img-profile rounded-circle" src="{{search.owner.profile.image.url}}"  style="height:30x; width:30px; margin-left: 20px; margin-bottom: 5px;"><h6> &nbsp;&nbsp;&nbsp;&nbsp;Ad by {{search.owner.username}}</h6></div>
+            <div class="card shadow">
+            <div class="item-1">
+                <a href="#"><img src="{{search.image.url}}" alt="Image" class="img-fluid" style="width:350px; height:250px;"></a>
+                <div class="item-1-contents"  style="width:350px;">
+                  <div class="text-center">
+                  <h3><a href="{{search.get_absolute_url}}">{{search.name}}</a></h3>
+                  
+                  <div class="price">{{search.price}} lakhs</div> 
+                  </div>
+                  <ul class="specs">
+                    <li>
+                      <span>KM Driven</span>
+                      <span class="spec">{{search.km_driven}}</span>
+                    </li>
+                    <li>
+                      <span>Fuel Type</span>
+                      <span class="spec">{{search.fuel_type}}</span>
+                    </li>
+                    <li>
+                      <span>Transmission</span>
+                      <span class="spec">{{search.transmission_type}}</span>
+                    </li>
+                    <li>
+                      <span>Seller-type</span>
+                      <span class="spec">{{search.seller_type}}</span>
+                    </li>
+                    <li>
+                      <span>Owner</span>
+                      <span class="spec">{{search.owner.username}}</span>
+                    </li>
+                    <li>
+                      <span>Contact Email</span>
+                      <span class="spec">{{search.owner.email}}</span>
+                    </li>
+                    <li>
+                      <span>Year</span>
+                      <span class="spec">{{search.year_bought}}</span>
+                    </li>
+                  </ul>
+                  <div class="row">
+                  <div class="d-flex action">
+                    <a href="contact.html" class="btn btn-primary">Contact Owner</a>
+                  </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+                </div>
+              </div>
+          </div>
+        </div>
+          {% endfor %}
+
+
+           <div class="container" style="margin-left: 450px;">
+          <div class="col-12">
+            <span class="p-3">1</span>
+            <a href="#" class="p-3">2</a>
+            <a href="#" class="p-3">3</a>
+            <a href="#" class="p-3">4</a>
+          </div>
+        </div>
+    </div>
+  </div>
+  </div>
+{% endblock %}

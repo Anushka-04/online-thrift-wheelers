@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+     
+    <div class="site-section"  style="background-image: url({%static 'images/new_bg4.jpg' %});">
+      <div class="container">
+        <h3 class="mb-3" style="color:#ffffff;">My Wishlist</h3>
+        <div class="row">
+            {% if messages %}
+              {% for message in messages %}
+            <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+              {% endfor %}
+              {% endif %}
+        {% for car in cars %}
+          <div class="col-lg-4 col-md-6 mb-4">
+              <div class="item-1">
+                <a href="#"><img src="{{car.image.url}}" alt="Image" class="img-fluid" style="width:350px; height:250px;"></a>
+                <div class="item-1-contents" style="width:350px;">
+                  <div class="text-center">
+                  <h3><a href="{% url 'vehicle:car-detail' car.id %}">{{car.name}}</a></h3>
+                  
+                  <div class="price">{{car.price}} lakhs</div> 
+                  </div>
+                  <ul class="specs">
+                    <li>
+                      <span>KM Driven</span>
+                      <span class="spec">{{car.km_driven}}</span>
+                    </li>
+                    <li>
+                      <span>Fuel Type</span>
+                      <span class="spec">{{car.fuel_type}}</span>
+                    </li>
+                    <li>
+                      <span>Transmission</span>
+                      <span class="spec">{{car.transmission_type}}</span>
+                    </li>
+                    <li>
+                      <span>Seller-type</span>
+                      <span class="spec">{{car.seller_type}}</span>
+                    </li>
+                    <li>
+                      <span>Owner</span>
+                      <span class="spec">{{car.owner.username}}</span>
+                    </li>
+                    <li>
+                      <span>Year</span>
+                      <span class="spec">{{car.year_bought}}</span>
+                    </li>
+                  </ul>
+                  <div class="d-flex action">
+                    <a href="/chat" class="btn btn-primary">Contact Owner</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+           </div>
+         </div>
+       </div>
+    
+       
+
+
+
+          <div class="col-12">
+            <span class="p-3">1</span>
+            <a href="#" class="p-3">2</a>
+            <a href="#" class="p-3">3</a>
+            <a href="#" class="p-3">4</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
